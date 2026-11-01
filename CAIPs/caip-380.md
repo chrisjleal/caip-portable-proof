@@ -2,11 +2,11 @@
 caip: 380
 title: Portable Proof
 author: Chris Leal (@cl34l)
-discussion-to: https://github.com/ChainAgnostic/CAIPs/pull/380
+discussions-to: https://github.com/ChainAgnostic/CAIPs/pull/380
 status: Review
 type: Standard
 created: 2025-10-01
-updated: 2026-10-27
+updated: 2026-11-01
 requires: [2,10]
 ---
 
@@ -395,7 +395,7 @@ Non-EVM example envelope (informative; see attached vector [`minimal-solana-1.js
 
 ### Implementations (Informative)
 
-- [`@proofable/sdk`](https://github.com/proofable/sdk): `computePortableProofQHash` reproduces both Anchors above, and `verifyPortableProofEnvelope` verifies EVM and Ed25519 envelopes offline, reporting envelope age separately from validity.
+- [`@proofable/sdk`](https://github.com/proofable/sdk): `computePortableProofQHash` reproduces both Anchors above, and `verifyPortableProofEnvelope` verifies EVM and Ed25519 envelopes offline, reporting envelope age separately from validity. Version 0.1.9 or later is required to verify envelopes that carry only `did` (no separate address field), including the test vectors above.
 - Proofable's hosted service issues and verifies envelopes in production. Its [published signed records](https://github.com/proofable/docs/tree/main/public/evidence/aaif/authority-at-dispatch) verify offline with the SDK or a standalone `ethers` check.
 
 ## Backwards Compatibility
